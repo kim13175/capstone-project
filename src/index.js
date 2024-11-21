@@ -1,14 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import ReactDOM from "react";
+import { createBrowserRouter, BrowserRouter } from 'react-router-dom';
 import App from "./App";
+import MainPage from "./components/mainPage";
+import { createRoot } from 'react-dom/client';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <MainPage />,
+      },
+    ],
+  },
+], {
+  future: {
+    v7_startTransition: true,
+  },
+});
+
+
+const container = document.getElementById('root');
+const root = createRoot(container); 
 root.render(
-  <BrowserRouter>
+  <BrowserRouter future={{ v7_startTransition: true }}>
     <App />
   </BrowserRouter>
 );
-
-reportWebVitals();
