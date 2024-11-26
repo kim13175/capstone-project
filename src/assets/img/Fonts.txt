@@ -1,0 +1,5 @@
+Fonts used in this design:
+
+Font: Advent Pro
+Author: Andreas Kalpakidis
+Url: https://www.fontsquirrel.com/fonts/advent-pro
